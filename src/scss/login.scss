@@ -1,0 +1,94 @@
+@import "./variables";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap');
+
+#login__icon {
+    font-size: clmap(4rem, 15vw, 6rem);
+}
+
+#login__bg {
+    background-image: url('../assets/bg-4.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+}
+
+.login {
+    font-family: sans-serif;
+    width: 100%;
+    height: 100vh;
+
+
+    &__header {
+        width: 100%;
+        height: 30%;
+        font-size: clamp(2rem, 5vw, 4rem);
+        font-family: 'Open Sans', sans-serif;
+        letter-spacing: 0.4rem;
+        text-transform: uppercase;
+        color: $primary;
+        // color : #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        gap: 2rem;
+        opacity: 0.99;
+
+        span {
+            color: black;
+            // color : $primary;
+            // color : #fff;
+        }
+
+    }
+
+    &__lower {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-top: 10rem;
+
+        &__box {
+            width: min(40rem, 80%);
+            border-radius: 1rem;
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255);
+            background-color: rgba(255, 255, 255, 0.4);
+
+            height: 20rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0.85;
+
+            h1 {
+                // color : #fff;
+                // color : black;
+                font-size: clamp(2rem, 4vw, 3rem);
+                opacity: 1;
+            }
+
+            button {
+                font-size: 4rem;
+                height: 6rem;
+                border: none;
+                background: #fff;
+                padding: 1rem;
+                border-radius: 100%;
+                margin-top: 1rem;
+                cursor: pointer;
+                opacity: 0.99;
+                box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+
+                &:hover {
+                    color: $primary;
+                }
+            }
+
+        }
+    }
+}
