@@ -1,11 +1,15 @@
 import React, { useEffect, useState } from 'react'
+import { useNavigate } from "react-router";
 
-
-
-const Main = () => {
+const Auth = () => {
     const [user, setUser] = useState(null);
+    const navigate = useNavigate();
     useEffect(() => {
         const token = localStorage.getItem('token');
+
+        if (token) {
+            navigate("/dashboard");
+        }
         const getUser = () => {
             fetch("https://zwvqkv-3333.preview.csb.app/auth/login/success", {
                 method: "GET",
@@ -30,11 +34,12 @@ const Main = () => {
         getUser();
         if (user) {
             localStorage.setItem('token', user.token);
+            navigate("/dashboard");
         }
     }, []);
     return (
-        <div>Dashboard</div>
+        <div>Auth</div>
     )
 }
 
-export default Main;
+export default Auth
