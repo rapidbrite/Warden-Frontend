@@ -1,44 +1,48 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { useNavigate } from "react-router";
 
+import Loader from '../component/Loader';
+import "../scss/auth.scss";
+
+
 const Auth = () => {
-    const [user, setUser] = useState(null);
     const navigate = useNavigate();
     useEffect(() => {
         const token = localStorage.getItem('token');
 
         if (token) {
-            navigate("/dashboard");
+            navigate("/main");
         }
         const getUser = () => {
-            fetch("https://zwvqkv-3333.preview.csb.app/auth/login/success", {
+            fetch("http://localhost:3333/auth/login/success",{
                 method: "GET",
                 credentials: "include",
                 headers: {
-                    Accept: "application/json",
-                    "Content-Type": "application/json",
-                    "Access-Control-Allow-Credentials": true,
+                  Accept: "application/json",
+                  "Content-Type": "application/json",
+                  "Access-Control-Allow-Credentials": true,
                 },
-            })
+              })
                 .then((response) => {
+                    
                     if (response.status === 200) return response.json();
                     throw new Error("authentication has been failed!");
                 })
-                .then((resObject) => {
-                    setUser(resObject.data);
+                .then((data) => {
+                   //  console.log("inside:", data);
+                    localStorage.setItem('token', data.data.token);
+                    navigate("/main");
                 })
                 .catch((err) => {
-                    console.log(err);
+                    navigate("/login");
                 });
         };
         getUser();
-        if (user) {
-            localStorage.setItem('token', user.token);
-            navigate("/dashboard");
-        }
     }, []);
     return (
-        <div>Auth</div>
+        <div className='auth'>
+            <Loader/>
+        </div>
     )
 }
 

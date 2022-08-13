@@ -9,6 +9,7 @@ import {
 // component
 import Login from "./pages/Login.jsx";
 import Main from "./pages/Main.jsx";
+import Auth from "./pages/Auth.jsx";
 
 // style
 import "./scss/app.scss"
@@ -17,9 +18,10 @@ import "./scss/app.scss"
 const App = () => {
   return (
     <Router >
-        <Routes>
+      <Routes>
+          <Route path="/auth" element = {<Auth />}/>
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<Main />} />
+          <Route path="/main/*" element={<Main />} />
           {/* <Route path="/" element={<Navigate to="/dashboard" />} /> */}
           
           {/* <Route path="*" element={<Navigate to="/login" />} /> */}

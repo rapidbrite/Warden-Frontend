@@ -1,0 +1,18 @@
+@import './variables';
+
+.snackbar_success {
+    @include flex-row(center !important, space-between !important);
+    @include font(1.3rem !important, 300 !important, .02em !important, 1 !important);
+    color: $green  !important;
+    background-color: $green-blur2  !important;
+}
+
+.snackbar_error {
+    @include flex-row(center !important, space-between !important);
+    @include font(1.3rem !important, 300 !important, .02em !important, 1 !important);
+    color: $red !important;
+    background-color: $red-blur2  !important;
+    // border : 1px solid $red-blur1 !important;
+    // border-radius: 1rem !important;
+}
+

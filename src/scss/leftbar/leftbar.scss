@@ -1,0 +1,91 @@
+
+@import "../variables";
+
+.leftbar{
+    width : max(5.5%, 9rem);
+    // width : 5.5%;
+    height: calc(100vh - 5rem);
+    padding-top: 1rem;
+
+    border-right : 1px solid $grey-border;
+
+    font-family: sans-serif;
+    text-transform: uppercase;
+
+    &__projects{
+        height : calc(100% - 6.5rem);
+        overflow : auto;
+        -ms-overflow-style: none; 
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar { 
+            display: none;  
+        }
+    }   
+
+    &__create{
+        margin-top: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    &__avatar{
+        width : 4.5rem;
+        height : 4.5rem;
+        margin: auto;
+        padding : auto;
+        background-color: #fff;
+        font-size : 1.8rem;
+        color : $grey-icon ;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1rem;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.2);
+
+        &--active{
+            background-color: $sky;
+            color: #fff;
+        }
+        
+        img{
+            height : 100%;
+            width : 100%;
+            border-radius: 50%;
+
+            &:hover{
+                cursor: pointer;
+                border-radius: 30%;
+            }
+        }
+
+        &:hover{
+            cursor: pointer;
+            background: $primary;
+            color : #fff;
+            border-radius: 30%;
+        }
+
+        &__create{
+            background-color: $primary;
+            color : #fff;
+            width : 5rem;
+            height : 5rem;
+            #add__icon{
+                font-size: 3rem;
+                
+            }
+
+            
+            transition: transform .6s ease-in-out;
+            &:hover{
+                background-color: #fff;
+                color : $primary;
+                transform: rotateZ(360deg);
+                border-radius: 50%;
+            }
+        }
+        
+        
+    }
+}

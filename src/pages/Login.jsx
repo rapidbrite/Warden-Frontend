@@ -12,15 +12,14 @@ const Login = () => {
     const navigate = useNavigate();
 
     const github = () => {
-        window.open("https://zwvqkv-3333.preview.csb.app/auth/github", "_self");
+        window.open("http://localhost:3333/auth/github", "_self");
     };
 
     useEffect(() => {
         const token = localStorage.getItem('token');
-        console.log("From login page : ", token);
 
         if (token) {
-            navigate("/dashboard");
+            navigate("/main");
         }
     }, []);
     return (

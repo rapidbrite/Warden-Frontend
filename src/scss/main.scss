@@ -1,0 +1,16 @@
+@import "./variables";
+
+.main{
+    width : 100%;
+    height: 100vh;
+    background-color: $background-color;
+
+    &__body{
+        display: flex;
+    }
+
+    &__dashboard{
+        width : 100%;
+        height: calc(100vh - 5rem);
+    }  
+}

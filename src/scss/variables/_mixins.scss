@@ -1,0 +1,59 @@
+//Flex Row
+@mixin flex-row-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-row($alignItem, $justifyContent) {
+    display: flex;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+}
+
+
+//Flex Column
+@mixin flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin flex-column($alignItem, $justifyContent) {
+    display: flex;
+    flex-direction: column;
+    align-items: $alignItem;
+    justify-content: $justifyContent;
+}
+
+
+//Grid 
+@mixin grid {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+@mixin grid-place {
+    display: grid;
+    place-content: center;
+}
+
+@mixin grid-temp($rowNnum, $rowMin, $rowMax, $colNum, $colMin, $colMax, $gap) {
+    display: grid;
+    place-content: center;
+    grid-template-rows: repeat($rowNnum, minmax($rowMin, $rowMax));
+    grid-template-columns: repeat($colNum, minmax($colMin, $colMax));
+    grid-gap: $gap;
+}
+
+
+
+//Fonts
+@mixin font($fontSize, $fontWeight, $letterSpacing, $lineHeight) {
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    letter-spacing: $letterSpacing;
+    line-height: $lineHeight;
+}

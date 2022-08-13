@@ -1,0 +1,27 @@
+@import "./variables";
+
+.project__body__content{
+    &__rightbar {
+        width : max(5.5%, 9rem);
+        height: 100%;
+        border-left: 1px solid $grey-border;
+        text-align: center;
+
+        h1{
+            padding-top: 1rem;
+            font-size: 1.5rem;
+            font-weight: Bold;
+            color: $font-dark;
+            margin-bottom: 1rem;
+        }
+    }
+    
+}
+
+.admin__avatar__css{
+    border :  2.5px solid $primary;
+}
+
+.user__avatar__css{
+    border : 2.5px solid $purple; 
+}
