@@ -13,7 +13,7 @@ const UserBox = ({ user, userDetails, projectId }) => {
 
   const inviteHandler = () => {
     api.inviteUser(user.userName, projectId, userDetails.userName, token).then(res => {
-      console.log(res);
+      //console.log(res);
       if(res?.statusCode === 200){
         setInvited("Invited");
         setInviteButton(false);

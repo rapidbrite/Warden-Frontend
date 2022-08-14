@@ -7,14 +7,14 @@ import { AiOutlinePlus } from "react-icons/ai";
 import "../../scss/leftbar/leftbar.scss";
 
 
-const Avatar = ({ char,create,tooltip,projectIcon, projectId,customCss = "",tooltipColor = "#1f62ff"}) => {
+const Avatar = ({ char,create,tooltip,projectIcon, projectId,customCss = "",tooltipColor = "#1f62ff", placement = "right"}) => {
     const projectPath = `/main/project/${projectId}`;
     const currentPath = window.location.pathname;
     const same = currentPath === projectPath;
     return (
         <Tooltip
             title={tooltip}
-            placement="right"
+            placement={placement}
             arrow
             componentsProps={{
                 tooltip: {

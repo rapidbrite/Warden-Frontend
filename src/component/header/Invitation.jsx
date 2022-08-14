@@ -26,7 +26,7 @@ const Invitation = ({invitations,userDetails,getNotifications,setNewProjectSemiD
       invitationId : invitation?.invitation
     }
     acceptInvitation(data).then(res => { 
-      console.log(res);
+      //console.log(res);
       if(res){
         getNotifications(userDetails?.userName, token);
         setNewProjectSemiData(res);

@@ -9,7 +9,7 @@ function Rightbar({ projectsData }) {
   const admins = projectsData?.admins;
   const owner = projectsData?.owner;
 
-  console.log(projectsData);
+  // console.log(projectsData);
   
   return (
     

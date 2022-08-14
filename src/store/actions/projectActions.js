@@ -12,7 +12,7 @@ export const getProjectActions = (dispatch) => {
     return {
         getProjectsSemiData: (userName,token) => dispatch(getProjectSemiData(userName,token)),
         setNewProjectSemiData: (projectDetails) => dispatch(setNewProjectSemiData(projectDetails)),
-        getProjectData : (projectId,token) => dispatch(getProjectData(projectId,token))
+        getProjectData : (projectId,userName,token) => dispatch(getProjectData(projectId,userName,token))
     }
 }
 
@@ -45,9 +45,9 @@ const setProjectData = (projectData) => {
     }
 }
 
-const getProjectData = (projectId, token) => {
+const getProjectData = (projectId,userName, token) => {
     return async (dispatch) => {
-        getProject(projectId, token).then(projectData => {
+        getProject(projectId,userName, token).then(projectData => {
             dispatch(setProjectData(projectData))
         })
     }

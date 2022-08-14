@@ -4,6 +4,7 @@ import { useParams, Link, Routes, Route } from "react-router-dom";
 // component
 import Invite from "./Invite";
 import Rightbar from "../main/Rightbar";
+import Chat from "../chat/Chat";
 
 import "../../scss/project/project.scss";
 
@@ -11,12 +12,15 @@ import "../../scss/project/project.scss";
 import { connect } from "react-redux";
 import { getProjectActions } from "../../store/actions/projectActions";
 
-const Project = ({ getProjectData, projectsData }) => {
+const Project = ({ getProjectData, projectsData,userDetails }) => {
   const token = localStorage.getItem("token");
   const { id } = useParams();
   React.useEffect(() => {
-    getProjectData(id, token);
-  }, [id, token, getProjectData]);
+    const userName = userDetails?.userName;
+    if (userName) {
+      getProjectData(id, userName ,token);
+    }
+  }, [id, token, getProjectData,userDetails?.userName]);
   return (
     <div className="project">
       {/* header */}
@@ -55,6 +59,7 @@ const Project = ({ getProjectData, projectsData }) => {
         <div className="project__body__content">
           <Routes>
             <Route path="/invite" element={<Invite projectId={id} />} />
+            <Route path="/chat" element={<Chat projectId={id} />} />
           </Routes>
         </div>
         <Rightbar />

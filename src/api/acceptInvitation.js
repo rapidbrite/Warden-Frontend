@@ -8,9 +8,9 @@ export const acceptInvitation = async (data) => {
         notificationId : data.notificationId, 
         invitationId : data.invitationId
     }
-    console.log(send);
+    //console.log(send);
     const response = await axios.post(`${URL}/user/acceptInvite`, send);
-    console.log(response.data);
+    //console.log(response.data);
     if (response.data.statusCode === 200) {
         return response.data.data;
     }

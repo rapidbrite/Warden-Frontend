@@ -1,9 +1,10 @@
 import URL from "./URL";
 import axios from "axios";
 
-export const getProject = async (projectId,token) => {
+export const getProject = async (projectId,userName,token) => {
     const data = {
         projectId,
+        userName,
         token
     }
     const response = await axios.post(`${URL}/project/get`,data);
