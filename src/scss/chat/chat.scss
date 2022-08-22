@@ -46,13 +46,14 @@
         //border: 1px solid red;
         margin-bottom: 0.2rem;
         padding-inline: 1rem;
-        input{
+        textarea{
              width : 90%;
             height : 4rem;
             border: 1px solid $grey-border;
             outline: none;
             border-radius: 5rem;
             padding : 1rem;
+            resize: none;
         }
 
         button {
@@ -130,6 +131,7 @@
                     max-width : 100%;
                     margin-left: auto;
                     word-wrap: break-word;
+                    white-space: pre-wrap;
                 }
             }
         }

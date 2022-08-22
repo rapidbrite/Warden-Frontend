@@ -1,0 +1,108 @@
+@import "../variables";
+
+.create__channel {
+  width: 100%;
+//   height: 100%;
+  display: flex;
+  flex-direction: column;
+    align-items: center;
+    margin: 5rem;
+  
+  
+  &__textfield {
+    
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:2rem;
+    margin-top: 3rem;
+    &__container {
+      width: 60%;
+      height: 5rem;
+      border: 1px solid $grey-border;
+    //   border-radius: 5%;
+      padding: 1rem;
+      font-size: 5.5rem;
+      color: $font-dark;
+      text-transform: capitalize;
+    //   &:hover {
+    //     background-color: $grey-border;
+    //   }
+    }
+  }
+  &__members {
+    padding-top: 3rem;
+    width: 70%;
+    display: flex;
+ flex-direction: column;
+    
+
+  }
+
+    &__button {
+        width: 70%;
+        display: flex;
+        justify-content: space-evenly;
+        padding-top:2rem;
+       &__clear{
+            button{
+            
+                padding:0.5rem;
+                font-size: 1.5rem;
+                font-weight: bold;
+                color:$primary;
+                background-color: #fff;
+                border-radius: 10%;
+                border: 2px solid $primary;
+                cursor: pointer;
+            }
+            
+       }
+       &__create{
+            button{
+            
+            padding:0.7rem;
+            font-size: 1.5rem;
+            font-weight: bold;
+            color:#fff;
+            background-color: $primary;
+            border-radius: 10%;
+            border: none;
+            cursor: pointer;
+            
+            
+            //border: 1px solid $primary;
+
+            
+            }
+            
+        
+       }
+    }
+    
+}
+
+.member_tab {
+  width: 100%;
+  height: auto;
+  margin-top: 2rem;
+}
+
+.member_list {
+  @include font($font-80, 400, 0.02em, 1);
+  color: black;
+  text-transform: capitalize;
+}
+
+.member_check {
+  color: $primary !important;
+}
+
+#member_chip {
+  @include font(1.15rem, 300, 0.02em, 1);
+  text-transform: capitalize;
+  color: $font-dark;
+  background: #fff;
+  margin-block: 1rem;
+}

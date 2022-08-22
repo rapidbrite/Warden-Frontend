@@ -4,7 +4,7 @@ const initialState = {
     userDetails : null
 }
 
-const reducer = (state = {}, action) => { 
+const reducer = (state = initialState, action) => { 
     switch (action.type) {
         case authConstants.SET_USER_DETAILS:
             return {

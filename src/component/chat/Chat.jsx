@@ -24,17 +24,32 @@ import { addConnectedUsersInSingleProject } from "../../socket/socketConnection"
 const Chat = ({ projectId, userDetails, getChatMessages, chatMessages,sendMessage }) => {
   const token = localStorage.getItem("token");
   const userName = userDetails?.userName;
+// 1min : k
 
   const [text,setText] = React.useState("");
 
   const sendMessageHandler = (e) =>{
     e.preventDefault();
     if (text.length > 0) {
+     // console.log(text);
       sendMessage(userName,projectId,text,token);
       setText("");
+    }  
+  }
+
+  const sendTextWhenEnter = (e) =>{
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessageHandler(e);
+      }
+      
+        
     }
     
-  }
+    
+  
+
+
   const messagesEndRef = useRef(null)
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView()
@@ -49,7 +64,7 @@ const Chat = ({ projectId, userDetails, getChatMessages, chatMessages,sendMessag
 
   React.useEffect(() => {
     scrollToBottom();
-  },[chatMessages]);
+  },[chatMessages,sendMessage]);
 
   return (
     <div className="project__chat">
@@ -70,12 +85,14 @@ const Chat = ({ projectId, userDetails, getChatMessages, chatMessages,sendMessag
           <div ref={messagesEndRef} />
         </div>
         <div className="project__chat__container__send">
-          <input
+          <textarea
             type="text"
             placeholder="Type a message"
             className="project__chat__input"
             value={text}
+            // resize="none"
             onChange={(e) => setText(e.target.value)}
+            onKeyPress = {sendTextWhenEnter}
           />
           <motion.button onClick={sendMessageHandler}>
             <AiOutlineSend />

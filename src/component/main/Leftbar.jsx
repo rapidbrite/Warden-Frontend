@@ -35,7 +35,7 @@ const  Leftbar = ({projectsSemiData}) => {
         {
           projectsSemiData?.map((project, index) => {
             return (
-              <Link to={`/main/project/${project?.projectId}`} key={index}>
+              <Link to={`/main/project/${project?.projectId}/board`} key={index}>
                 <Avatar char={project.name.slice(0, 1)} tooltip={project.name} projectIcon={project.projectIcon} projectId={ project?.projectId} />
               </Link>
             )

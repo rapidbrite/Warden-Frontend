@@ -39,6 +39,11 @@
             align-items: center;
             font-size: 1rem;
             color: $font-dark;
+
+            &:hover{
+                // color: $primary;
+                cursor: pointer;
+            }
             
             
             img{
@@ -89,4 +94,61 @@
 
         }
     }
+}
+
+.header__account__menu__div{
+    width : 10rem;
+    height : 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap : 1rem;
+
+    div{
+        width : 100%;
+        display: flex;
+        justify-content: space-evenly;
+        // gap : 1rem;
+        // @include flex-row(center !important, space-between !important);
+        @include font(1.3rem !important, 300 !important, .02em !important, 1 !important);
+        color : $font-dark;
+
+        &:hover{
+            cursor: pointer;
+            color : $primary;
+        }
+
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+}
+
+// #header__account-menu{
+//     height : 10rem;
+//     div{
+//         // height : 2rem;
+//         // border: 1px solid red;
+
+//         display:flex;
+//         gap : 1rem;
+
+
+//         h1{
+//             font-size: 1.5rem;
+//         }
+//     }
+// }
+
+#header__profile__menu{
+    // @include flex-row(center !important, space-between !important);
+    @include font(1.3rem !important, 300 !important, .02em !important, 1 !important);
+    display:flex;       
+    width : 100%;
+    justify-content: space-evenly;
+    // gap : 1rem;
+}
+
+#header__profile__menu__icons{
+    font-size: 1.5rem;
 }

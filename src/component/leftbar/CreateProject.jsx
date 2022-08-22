@@ -119,7 +119,7 @@ const CreateProject = ({
                   <h3>Drag&amp;Drop files here</h3>
                   <span>or</span>
                 </div>
-                <a className="Neon-input-choose-btn blue">Browse Files</a>
+                <div className="Neon-input-choose-btn blue">Browse Files</div>
               </div>
             </div>
           </div>

@@ -5,7 +5,7 @@ const initialState = {
     projectsData: [],
 }
 
-const reducer = (state = {}, action) => {
+const reducer = (state = initialState, action) => {
     switch (action.type){
         case projectConstants.GET_PROJECTS_SEMIDATA:
             return {

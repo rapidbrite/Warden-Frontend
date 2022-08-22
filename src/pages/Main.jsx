@@ -28,6 +28,7 @@ import {connectWithSocketServer,addConnectedUserToSocket} from "../socket/socket
 
 const Main = ({login,getProjectsSemiData,userDetails,getNotifications}) => {
     const navigate = useNavigate();
+    window.onbeforeunload = ()=>"";
 
     useEffect(() => {
         const token = localStorage.getItem('token');
@@ -39,7 +40,7 @@ const Main = ({login,getProjectsSemiData,userDetails,getNotifications}) => {
         login(token);
         getProjectsSemiData(userDetails?.userName,token);
         getNotifications(userDetails?.userName, token);
-    }, [userDetails?.userName,login,getProjectsSemiData,navigate]);
+    }, [userDetails?.userName,login,getProjectsSemiData,navigate,getNotifications]);
     return (
         <div className='main'>
             <Header />

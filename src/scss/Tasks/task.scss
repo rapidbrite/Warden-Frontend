@@ -1,0 +1,132 @@
+@import "./../variables";
+.taskmainboard {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem;
+  overflow: auto;
+  &__map {
+    display: flex;
+    flex-direction: column;
+    width: 25rem;
+    border: 1px solid #ccc;
+    height: 100%;
+    background-color: rgba(130, 130, 130, 0.1);
+    border-radius: 4% 7% 0 0 !important;
+    &__statustitle {
+      padding: 0.6rem;
+      text-transform: uppercase;
+      font-size: 1.2rem;
+      color: $font-dark;
+    }
+  }
+
+  &__tasklist {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    padding: 0.4rem;
+    gap: 0.4rem;
+    &__task {
+      width: 100%;
+      height: 100%;
+      padding: 1rem 1rem 0.5rem 1rem;
+      background-color: $background-color;
+      border-radius: 4%;
+
+      &:hover {
+        background-color: rgba(130, 130, 130, 0.1);
+        cursor: pointer;
+
+        #taskmainboard__tasklist__taskin__type__icon {
+          display: block;
+        }
+
+        .taskmainboard__tasklist__taskin__footer__right__2 {
+          display: flex;
+          align-items: center;
+          height: 2.2rem;
+          width: 2.2rem;
+          justify-content: center;
+          font-size: 1.5rem;
+          border: 1px solid $background-color;
+          border-radius: 50%;
+          background-color: $background-color;
+        }
+      }
+    }
+    &__taskin {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      &__type {
+        display: flex;
+      }
+      &__footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &__left {
+          color: $font-light;
+          font-size: 1.2rem;
+          padding-top: 0.5rem;
+          padding-bottom: 0.5rem;
+        }
+        &__right {
+          display: flex;
+          gap: 1rem;
+          &__1 {
+            display: flex;
+            align-items: center;
+            height: 2.2rem;
+            width: 2.2rem;
+            justify-content: center;
+            font-size: 1rem;
+            border: 1px solid $primary;
+            border-radius: 50%;
+            color: #fff;
+            background-color: $primary;
+          }
+          &__2 {
+            display: none;
+            color: $font-dark;
+            &:hover {
+              cursor: pointer;
+              background-color: $background-color;
+              color: $red;
+            }
+          }
+        }
+      }
+
+      h1 {
+        font-weight: 400;
+        font-size: 1.5rem;
+        color: #384763;
+        padding-bottom: 1rem;
+      }
+      h2 {
+        font-weight: 400;
+        font-size: 1.2rem;
+        padding: 0.2rem 0.3rem;
+        width: fit-content;
+        background-color: rgba(130, 130, 130, 0.1);
+        color: $font-dark;
+      }
+    }
+  }
+}
+#taskmainboard__tasklist__taskin__type__icon {
+  margin-left: 1rem;
+  color: $font-light;
+  font-size: 2rem;
+  display: none;
+  &:hover {
+    color: $primary;
+    cursor: pointer;
+  }
+}

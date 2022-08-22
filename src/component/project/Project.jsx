@@ -5,6 +5,7 @@ import { useParams, Link, Routes, Route } from "react-router-dom";
 import Invite from "./Invite";
 import Rightbar from "../main/Rightbar";
 import Chat from "../chat/Chat";
+import Board from "../board/Board";
 
 import "../../scss/project/project.scss";
 
@@ -60,6 +61,7 @@ const Project = ({ getProjectData, projectsData,userDetails }) => {
           <Routes>
             <Route path="/invite" element={<Invite projectId={id} />} />
             <Route path="/chat" element={<Chat projectId={id} />} />
+            <Route path="/board/*" element={<Board projectId={id} />} />
           </Routes>
         </div>
         <Rightbar />
