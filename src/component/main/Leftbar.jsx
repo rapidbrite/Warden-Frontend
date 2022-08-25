@@ -28,7 +28,7 @@ const  Leftbar = ({projectsSemiData}) => {
   
   return (
     <div className='leftbar'>
-      <Dialog open={open}>
+      <Dialog open={open} onClose={handleClose}>
         <CreateProject handleClose={handleClose} />
       </Dialog>
       <div className='leftbar__projects'>

@@ -30,7 +30,7 @@ const UserBox = ({ user, userDetails, projectId }) => {
       setInviteButton(false);
       setInvited("Invited");
     }
-  },[])
+  },[ user?.inviteStatus ])
   return (
       <div className="project__invite__content__userbox">
           <div className='project__invite__content__userbox__left'>

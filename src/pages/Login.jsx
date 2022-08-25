@@ -21,7 +21,7 @@ const Login = () => {
         if (token) {
             navigate("/main");
         }
-    }, []);
+    }, [ navigate ]);
     return (
         <div className="login">
             <div id="login__bg"></div>

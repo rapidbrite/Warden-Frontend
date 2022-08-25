@@ -33,7 +33,7 @@ const ChannelBoard = ({
       <div className="channelBoard__main__helpers">
         </div>
       <div className="channelBoard__main__board">
-        <TaskMainBoard />
+        <TaskMainBoard channelId={channelDetails?.channelId}/>
       </div>
     </div>
   );

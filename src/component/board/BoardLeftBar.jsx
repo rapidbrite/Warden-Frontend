@@ -28,7 +28,7 @@ const BoardLeftBar = ({ channelsSemiData, projectId, setChannelDetails, userDeta
       <div className="project__board__leftbar__content">
         {channelsSemiData?.map((channel, index) => {
           return (
-            <Link to={`${channel.channelId}`} key={index}>
+            <Link to={`channel/${channel.channelId}`} key={index}>
               <div
                 onClick={()=> setChannelId(channel.channelId)}
                 key={index}

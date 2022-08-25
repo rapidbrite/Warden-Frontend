@@ -38,7 +38,7 @@ const Auth = () => {
                 });
         };
         getUser();
-    }, []);
+    }, [ navigate ]);
     return (
         <div className='auth'>
             <Loader/>

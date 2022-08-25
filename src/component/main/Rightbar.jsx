@@ -7,7 +7,7 @@ import Avatar from '../leftbar/Avatar';
 function Rightbar({ projectsData }) {
   const users = projectsData?.users;
   const admins = projectsData?.admins;
-  const owner = projectsData?.owner;
+  
 
   // console.log(projectsData);
   

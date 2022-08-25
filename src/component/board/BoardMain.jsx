@@ -19,7 +19,7 @@ const BoardMain = () => {
         <Route path="/create" element={<CreateChannel />}/>
       </Routes>
       <Routes>
-        <Route path={`/:id/*`} element={<ChannelBoard />} />
+        <Route path={`/channel/:id`} element={<ChannelBoard />} />
       </Routes>
     </div>
     

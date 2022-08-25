@@ -15,7 +15,7 @@ const reducer = (state = initialState, action) => {
         case taskConstants.SET_NEW_TASK_SEMIDATA:
             return {
                 ...state,
-                tasksSemiData: [...state.tasksSemiData, action.tasksSemiData]
+                tasksSemiData: action.tasksSemiData
             }
         case taskConstants.SET_TASK_DETAILS:
             return {

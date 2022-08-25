@@ -27,10 +27,10 @@ const CreateChannel = ({
   setNewChannelSemiData,
 }) => {
   const allUsers = [];
-  for (let i = 0; i < projectsData?.admins.length; i++) {
+  for (let i = 0; i < projectsData?.admins?.length; i++) {
     allUsers.push(projectsData?.admins[i].userName);
   }
-  for (let i = 0; i < projectsData?.users.length; i++) {
+  for (let i = 0; i < projectsData?.users?.length; i++) {
     allUsers.push(projectsData?.users[i].userName);
   }
   const projectId = projectsData?.projectId;
@@ -80,9 +80,7 @@ const CreateChannel = ({
     }
   };
 
-  useEffect(() => {
-    
-    } ,[setNewChannelSemiData]);
+  useEffect(() => {}, [setNewChannelSemiData]);
 
   return (
     <div className="create__channel">
