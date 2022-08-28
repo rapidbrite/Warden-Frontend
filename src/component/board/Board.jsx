@@ -10,26 +10,36 @@ import "../../scss/Board/Board.scss"
 import { connect } from 'react-redux'
 import { getChannelActions } from '../../store/actions/channelActions'
 
-const Board = ({ userDetails, getChannelsSemiData,projectId }) => {
+const Board = ({ userDetails, getChannelsSemiData,projectId ,setChannelDetails}) => {
   // username, projectid, token
   const token = localStorage.getItem('token')
-  //const [channelId, setChannelId] = React.useState('')
+  const [channelId, setChannelId] = React.useState('')
   React.useEffect(() => {
+   // console.log('1')
     getChannelsSemiData(userDetails?.userName, projectId, token)
-    //console.log(userDetails?.userName)
-  },[getChannelsSemiData,userDetails?.userName,projectId,token]);
+  }, [getChannelsSemiData, userDetails?.userName, projectId, token])
 
+  
+  
+  
+  React.useEffect(() => {
+    //console.log('2')
+    if(channelId){
+      setChannelDetails(channelId,userDetails?.userName,token)
+      }
+  },[channelId,userDetails?.userName,token,setChannelDetails]);
   return (   
     <div className='project__board'>
-      <BoardLeftBar projectId={projectId} />
-      <BoardMain />
+      <BoardLeftBar projectId={projectId} setChannelId={setChannelId} />
+      <BoardMain setChannelId={setChannelId}/>
     </div>
   )
 }
 
-const mapStateToProps = ({auth}) => {
+const mapStateToProps = ({auth,channel}) => {
   return {
     ...auth,
+    ...channel
   }
 }
 const mapActionToProps = (dispatch) => {

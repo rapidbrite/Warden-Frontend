@@ -1,22 +1,53 @@
 @import "./../variables";
 
-
 .channelBoard__main {
-    
   &__text {
     //border : 1px solid $red;
-    padding : 1rem;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     gap: 0.7rem;
     &__navi {
       color: $font-light;
       font-size: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      &__back{
+        color: $font-dark;
+        font-size: 3rem;
+        cursor: pointer;
+        &:hover {
+          color: $font-light;
+        }
+        padding-left: 2rem;
+        padding-top: 2rem;
+      }
+      &__delete{
+        color: $font-dark;
+        font-size: 3rem;
+        cursor: pointer;
+        &:hover {
+          color: $primary;
+        }
+        padding-right: 2rem;
+        padding-top: 2rem;
+      }
     }
-    &__title{
-      font-size: 2rem;
-      font-weight: bold;
-      color: $font-dark;
+    &__channel {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      &__title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $font-dark;
+        
+      }
+      &__settings{
+        font-size: 2rem;
+        margin-right: 9rem;
+      }
     }
     &__content {
       font-size: 1.2rem;
@@ -24,15 +55,13 @@
     }
   }
 
-
   // &__helpers{
   //   display: flex;
   //   flex-direction: column;
   //   height: 5rem;
   // }
 
-  &__board{
+  &__board {
     height: 100%;
-    
   }
 }

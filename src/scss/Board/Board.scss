@@ -47,9 +47,14 @@
             //border: 1px solid $grey-border;
             padding: 1rem;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
             
             &:hover {
                 background-color: $grey-border;
+
+                
             }
         }
     }
@@ -65,3 +70,4 @@
                 cursor: pointer;
             }
 }
+

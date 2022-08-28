@@ -11,6 +11,7 @@ export const getTaskActions = (dispatch) => {
         getTasksSemiData: (userName, channelId,token) => dispatch(getTasksSemiData(userName, channelId,token)),
         setTaskDetails: (taskDetails) => dispatch(setTaskDetails(taskDetails)),
         setNewTaskSemiData: (taskDetails) => dispatch(setNewTaskSemiData(taskDetails)),
+        setTasksSemiData: (tasksSemiData) => dispatch(setTasksSemiData(tasksSemiData)),
     }
 }
 

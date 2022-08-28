@@ -15,6 +15,10 @@ export const getChannelActions = (dispatch) => {
       dispatch(setChannelDetails(channelId, userName, token)),
     setNewChannelSemiData: (channelDetails) =>
       dispatch(setNewChannelSemiData(channelDetails)),
+    setChannelData: (channelDetails) =>
+      dispatch(setChannelData(channelDetails)),
+    setChannelsSemiData: (channelsSemiData) =>
+      dispatch(setChannelsSemiData(channelsSemiData)),
   };
 };
 

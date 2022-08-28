@@ -11,7 +11,7 @@ export const createChannel = async (userName, channelName, channelDescription, c
         members,
         token
     }
-    console.log(data);
+    //console.log(data);
     const response = await axios.post(`${URL}/channel/create`, data);
     //console.log(response);
     if (response.data.statusCode === 200) {

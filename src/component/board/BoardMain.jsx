@@ -6,9 +6,10 @@ import {
 } from "react-router-dom";
 
 import ChannelBoard from './ChannelBoard'
+import ChannelSettings from './ChannelSettings';
 
-const BoardMain = () => {
-      
+const BoardMain = ( {setChannelId }) => {
+     
   
   return (
     <div style={{
@@ -16,10 +17,13 @@ const BoardMain = () => {
     }}>
       <Routes>
         {/* <Route path="/profile/*" element={<Profile/>} /> */}
-        <Route path="/create" element={<CreateChannel />}/>
+        <Route path="/create" element={<CreateChannel setChannelId={setChannelId}/>}/>
       </Routes>
       <Routes>
         <Route path={`/channel/:id`} element={<ChannelBoard />} />
+      </Routes>
+      <Routes>
+        <Route path={`/channel/:id/settings`} element={<ChannelSettings />} />
       </Routes>
     </div>
     

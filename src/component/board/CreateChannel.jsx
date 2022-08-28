@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-
+import { useNavigate } from 'react-router-dom' ;
 import "../../scss/Board/createChannel.scss";
 
 import TextField from "@mui/material/TextField";
@@ -25,7 +25,9 @@ const CreateChannel = ({
   projectsData,
   setSnackbar,
   setNewChannelSemiData,
+  setChannelId
 }) => {
+  const navigate = useNavigate();
   const allUsers = [];
   for (let i = 0; i < projectsData?.admins?.length; i++) {
     allUsers.push(projectsData?.admins[i].userName);
@@ -69,9 +71,13 @@ const CreateChannel = ({
             const reduxStoreData = {
               channelId: res.channelId,
               channelName: res.channelName,
+              channelKey: res.channelKey,
             };
             setNewChannelSemiData(reduxStoreData);
             clearHandler();
+            setChannelId(res.channelId);
+            navigate(`/main/project/${projectsData.projectId}/board/channel/${res.channelKey}`);
+            
             setSnackbar(true, "channel created", "success");
           } else {
             setSnackbar(false, "Something went wrong", "error");

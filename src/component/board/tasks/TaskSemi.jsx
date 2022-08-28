@@ -2,7 +2,7 @@ import React from "react";
 import "../../../scss/Tasks/task.scss";
 import { CgAdd } from "react-icons/cg";
 import { RiDeleteBin6Line } from "react-icons/ri";
-import ConfirmDelete from "./ConfirmDelete";
+
 
 import Dialog from '@mui/material/Dialog';
 
@@ -11,7 +11,7 @@ import URL from "../../../api/URL.js";
 import { connect } from "react-redux";
 import { getSnackbarActions } from "../../../store/actions/snackbarActions";
 import { getTaskActions } from "../../../store/actions/taskActions";
-
+import ConfirmPopUp from "../../ConfirmPopUp";
 import { Draggable } from "react-beautiful-dnd";
 
 const TaskSemi = ({
@@ -80,7 +80,7 @@ const TaskSemi = ({
     className={`taskmainboard__tasklist__taskin  ${ snapshot.isDragging ? "taskmainboard__tasklist__taskin__dragging" : ""}`}>
     
       <Dialog open={open} onClose={handleClose} >
-        <ConfirmDelete handleClose={handleClose} deleteTask={deleteTask} />
+        <ConfirmPopUp title='Are you sure?' desc='You want to delete this task?' handleClose={handleClose} handleConfirm={deleteTask} />
       </Dialog>
       <h1>{task.taskName}</h1>
       <div className="taskmainboard__tasklist__taskin__type">

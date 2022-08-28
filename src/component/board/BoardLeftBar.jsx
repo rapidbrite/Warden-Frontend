@@ -7,14 +7,9 @@ import { getChannelActions } from "../../store/actions/channelActions";
 
 import { CgAdd } from "react-icons/cg";
 
-const BoardLeftBar = ({ channelsSemiData, projectId, setChannelDetails, userDetails }) => {
-  const token = localStorage.getItem("token");
-  const [channelId, setChannelId] = React.useState(null);
-  React.useEffect(() => {
-    if(channelId){
-    setChannelDetails(channelId,userDetails?.userName,token)
-    }
-  },[channelId,userDetails?.userName,token,setChannelDetails]);
+
+const BoardLeftBar = ({ channelsSemiData, projectId, setChannelId}) => {
+
 
 
   return (
@@ -28,17 +23,19 @@ const BoardLeftBar = ({ channelsSemiData, projectId, setChannelDetails, userDeta
       <div className="project__board__leftbar__content">
         {channelsSemiData?.map((channel, index) => {
           return (
-            <Link to={`channel/${channel.channelId}`} key={index}>
+            <Link to={`channel/${channel.channelKey}`} key={index}>
               <div
                 onClick={()=> setChannelId(channel.channelId)}
                 key={index}
                 className="project__board__leftbar__content__channel"
               >
                 {channel.channelKey} # {channel.channelName}
+                
               </div>
             </Link>
           );
         })}
+        
       </div>
     </div>
   );

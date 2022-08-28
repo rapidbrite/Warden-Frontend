@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { Link , useNavigate } from "react-router-dom";
 import {
   Routes,
   Route,
@@ -24,6 +24,7 @@ import { connect } from "react-redux";
 
 
 const Profile = ({userDetails}) => {
+    const navigate = useNavigate();
   return (
       <div className='profile'>
           
@@ -32,9 +33,9 @@ const Profile = ({userDetails}) => {
               <div className='profile__menu__header'>
                   <div className="profile__menu__header__button">
                     <div>
-                        <Link to="/main">
-                            <RiArrowGoBackFill />
-                        </Link>
+                        
+                            <RiArrowGoBackFill onClick={() => navigate(-1)}/>
+                        
                     </div>
                       <div>
                           <a href={`https://github.com/${userDetails?.userName}`} rel="noreferrer"  target="_blank">
