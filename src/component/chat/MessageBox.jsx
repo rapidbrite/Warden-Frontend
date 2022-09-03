@@ -13,7 +13,7 @@ const MessageBox = ({ userName, avatar, text, createdAt, myUserName }) => {
             {userName}
           </div>
           <div className="project__chat__container__message__box__text__u__time">
-            {createdAt?.slice(0, 10)}
+            {createdAt?.slice(0, 10).split("-").reverse().join("-")} 
             {" "}
             {createdAt?.slice(11, 19)}
           </div>

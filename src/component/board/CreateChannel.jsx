@@ -66,7 +66,7 @@ const CreateChannel = ({
           token
         )
         .then((res) => {
-          console.log(res);
+          //console.log(res);
           if (res) {
             const reduxStoreData = {
               channelId: res.channelId,

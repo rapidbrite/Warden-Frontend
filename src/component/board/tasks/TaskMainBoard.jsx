@@ -86,7 +86,7 @@ const TaskMainBoard = ({
       if (response.data.statusCode === 200) {
         setNewTaskSemiData(newTasksSemiData);
       } else {
-        console.log(response.data.message);
+        //console.log(response.data.message);
         setSnackbar(true, "Something went wrong", "error");
       }
 

@@ -15,10 +15,7 @@ function Rightbar({ projectsData }) {
     
  
     <div className='project__body__content__rightbar'>
-      {/* <div className='project__body__content__rightbar__owner'>
-        <Avatar projectIcon={owner?.avatar} tooltip={owner?.userName}/>
-      </div> */}
-      {/* <div className=''> */}
+      
       <h1>Admins</h1>
         {
           admins?.map((admin,index) => {
@@ -27,8 +24,6 @@ function Rightbar({ projectsData }) {
             )
           })
         }
-      {/* </div> */}
-      {/* <div className='project__body__content__rightbar__user'> */}
         <h1>Users</h1>
         {users?.map((user,index) => {
           return (
@@ -36,11 +31,7 @@ function Rightbar({ projectsData }) {
             <Avatar projectIcon={user?.avatar} tooltip={`@${user?.userName}`} key={index} customCss="user__avatar__css" tooltipColor="#942aff"/>
             </div>
           )
-        })}  
-      
-      {/* </div> */}
-
-      
+        })}       
       </div>
    
   )

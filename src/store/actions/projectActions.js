@@ -12,7 +12,9 @@ export const getProjectActions = (dispatch) => {
     return {
         getProjectsSemiData: (userName,token) => dispatch(getProjectSemiData(userName,token)),
         setNewProjectSemiData: (projectDetails) => dispatch(setNewProjectSemiData(projectDetails)),
-        getProjectData : (projectId,userName,token) => dispatch(getProjectData(projectId,userName,token))
+        getProjectData : (projectId,userName,token) => dispatch(getProjectData(projectId,userName,token)),
+        setProjectData : (projectData) => dispatch(setProjectData(projectData)),
+        setProjectSemiData : (projectDetails) => dispatch(setProjectSemiData(projectDetails))
     }
 }
 

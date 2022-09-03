@@ -84,7 +84,13 @@ const TaskSemi = ({
       </Dialog>
       <h1>{task.taskName}</h1>
       <div className="taskmainboard__tasklist__taskin__type">
-        {task?.taskType ? <h2>{task.taskType}</h2> : null}
+        
+        
+        {task?.taskType.map((t) => (
+            <h2>{t}</h2>
+        )
+
+        )}
         <CgAdd id="taskmainboard__tasklist__taskin__type__icon" />
       </div>
       <div className="taskmainboard__tasklist__taskin__footer">

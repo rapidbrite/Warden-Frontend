@@ -18,6 +18,7 @@ const Invite = ({projectId}) => {
       api.searchUser(search, projectId).then(res => { 
             setUsers(res);
         })
+        //console.log(users);
     }
   return (
       <div className='project__invite'>
