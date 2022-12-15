@@ -13,7 +13,7 @@ const Auth = () => {
       navigate("/main");
     }
     const getUser = () => {
-      fetch("http://3.108.252.9:3333/auth/login/success", {
+      fetch("https://rapidbrite.dhananjay.live/auth/login/success", {
         method: "GET",
         credentials: "include",
         headers: {

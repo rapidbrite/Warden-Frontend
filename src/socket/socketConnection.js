@@ -6,7 +6,7 @@ import store from "../store/store";
 let socket = null;
 
 export const connectWithSocketServer = () => {
-  socket = io("http://3.108.252.9:3333");
+  socket = io("https://rapidbrite.dhananjay.live");
   socket.on("connect", () => {
     // console.log("connected to socket server");
     // console.log(socket.id);

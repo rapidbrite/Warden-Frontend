@@ -1,3 +1,3 @@
-const URL = "http://3.108.252.9:3333";
+const URL = "https://rapidbrite.dhananjay.live";
 
 export default URL;
