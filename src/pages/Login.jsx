@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate();
 
     const github = () => {
-        window.open("http://localhost:3333/auth/github", "_self");
+        window.open("http://3.108.252.9:3333/auth/github", "_self");
     };
 
     useEffect(() => {
