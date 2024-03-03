@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
+import config from "../config.json";
 
 import Loader from "../component/Loader";
 import "../scss/auth.scss";
@@ -13,7 +14,7 @@ const Auth = () => {
       navigate("/main");
     }
     const getUser = () => {
-      fetch("https://rapidbrite.dhananjay.live/auth/login/success", {
+      fetch(`${config.Backend}/auth/login/success`, {
         method: "GET",
         credentials: "include",
         headers: {

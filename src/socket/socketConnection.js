@@ -3,10 +3,11 @@ import { setNewNotification } from "../store/actions/notificationActions";
 import { setMessage } from "../store/actions/chatActions";
 import store from "../store/store";
 
+import config from "../config.json";
 let socket = null;
 
 export const connectWithSocketServer = () => {
-  socket = io("https://rapidbrite.dhananjay.live");
+  socket = io(`${config.Backend}`);
   socket.on("connect", () => {
     // console.log("connected to socket server");
     // console.log(socket.id);
