@@ -15,7 +15,7 @@ const Board = ({ userDetails, getChannelsSemiData,projectId ,setChannelDetails})
   const token = localStorage.getItem('token')
   const [channelId, setChannelId] = React.useState('')
   React.useEffect(() => {
-   // console.log('1')
+   
     getChannelsSemiData(userDetails?.userName, projectId, token)
   }, [getChannelsSemiData, userDetails?.userName, projectId, token])
 

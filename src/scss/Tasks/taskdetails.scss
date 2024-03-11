@@ -1,0 +1,96 @@
+@import "../variables";
+
+.taskDetailsMain {
+  width: 80%;
+  margin: auto;
+  border: 1px solid $background-color;
+  border-radius: 5px;
+  padding: 20px;
+  background-color: $background-color;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $background-color;
+    padding-bottom: 10px;
+
+    h1 {
+      font-size: 1.5em;
+      color: $primary;
+    }
+
+    h2 {
+      cursor: pointer;
+      color: $purple;
+    }
+  }
+
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 20px;
+
+    &__left {
+      width: 60%;
+
+      &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        h1 {
+          font-size: 1.3em;
+          color: $primary;
+        }
+
+        button {
+          padding: 10px;
+          border-radius: 5px;
+          border: none;
+          background-color: $primary;
+          color: white;
+          cursor: pointer;
+        }
+      }
+
+      &__body {
+        padding-top: 20px;
+
+        h2 {
+          font-size: 1.2em;
+          color: $primary;
+        }
+
+        h3 {
+          font-size: 1em;
+          color: $purple;
+        }
+      }
+
+      &__footer {
+        padding-top: 20px;
+
+        h3 {
+          font-size: 1em;
+          color: $purple;
+        }
+      }
+    }
+
+    &__right {
+      width: 35%;
+
+      &__header {
+        // styles for header in right section
+      }
+
+      &__body {
+        // styles for body in right section
+      }
+
+      &__footer {
+        // styles for footer in right section
+      }
+    }
+  }
+}
