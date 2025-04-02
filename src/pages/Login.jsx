@@ -4,7 +4,7 @@ import { GiMagicHat } from "react-icons/gi";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router";
 
-import config from "../config.json";
+import config from "../config";
 
 // style
 import "../scss/login.scss";

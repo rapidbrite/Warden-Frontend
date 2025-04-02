@@ -3,7 +3,7 @@ import { setNewNotification } from "../store/actions/notificationActions";
 import { setMessage } from "../store/actions/chatActions";
 import store from "../store/store";
 
-import config from "../config.json";
+import config from "../config";
 let socket = null;
 
 export const connectWithSocketServer = () => {

@@ -1,3 +1,4 @@
-import config from "../config.json";
+import config from "../config";
+
 const URL = config.Backend;
 export default URL;

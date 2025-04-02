@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router";
-import config from "../config.json";
+import config from "../config";
 
 import Loader from "../component/Loader";
 import "../scss/auth.scss";
