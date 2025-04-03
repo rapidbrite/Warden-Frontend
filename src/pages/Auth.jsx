@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import config from "../config";
 
 import Loader from "../component/Loader";
@@ -7,14 +7,32 @@ import "../scss/auth.scss";
 
 const Auth = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  
   useEffect(() => {
-    const token = localStorage.getItem("token");
-    console.log("token", token);
-    if (token) {
+    // First, check if we have a token in localStorage
+    const storedToken = localStorage.getItem("token");
+    
+    // Next, check if we have a token in URL (from redirect)
+    const params = new URLSearchParams(location.search);
+    const tokenFromUrl = params.get("token");
+    
+    if (storedToken) {
+      // Already authenticated
       navigate("/main");
+      return;
     }
+    
+    if (tokenFromUrl) {
+      // Got token from OAuth redirect, save it
+      localStorage.setItem("token", tokenFromUrl);
+      navigate("/main");
+      return;
+    }
+    
+    // If no token available, try the original fetch method
     const getUser = () => {
-      console.log("inside getUser");
+      console.log("Attempting fetch authentication");
       fetch(`${config.Backend}/auth/login/success`, {
         method: "GET",
         credentials: "include",
@@ -25,24 +43,23 @@ const Auth = () => {
         },
       })
         .then((response) => {
-          console.log('response',response);
+          console.log('response', response);
           if (response.status === 200) return response.json();
-
-          throw new Error("authentication has been failed!");
+          throw new Error("Authentication failed!");
         })
         .then((data) => {
-          //console.log("inside:", data);
           localStorage.setItem("token", data.data.token);
           navigate("/main");
         })
         .catch((err) => {
           console.log("Authentication error:", err.message);
-          console.log("Full error:", err);
           navigate("/login");
         });
     };
+    
     getUser();
-  }, [navigate]);
+  }, [navigate, location]);
+  
   return (
     <div className="auth">
       <Loader />
