@@ -9,11 +9,12 @@ const Auth = () => {
   const navigate = useNavigate();
   useEffect(() => {
     const token = localStorage.getItem("token");
-
+    console.log("token", token);
     if (token) {
       navigate("/main");
     }
     const getUser = () => {
+      console.log("inside getUser");
       fetch(`${config.Backend}/auth/login/success`, {
         method: "GET",
         credentials: "include",
@@ -24,7 +25,7 @@ const Auth = () => {
         },
       })
         .then((response) => {
-          //console.log('response',response);
+          console.log('response',response);
           if (response.status === 200) return response.json();
 
           throw new Error("authentication has been failed!");
@@ -35,7 +36,8 @@ const Auth = () => {
           navigate("/main");
         })
         .catch((err) => {
-          //console.log(err);
+          console.log("Authentication error:", err.message);
+          console.log("Full error:", err);
           navigate("/login");
         });
     };
